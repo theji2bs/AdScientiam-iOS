@@ -9,6 +9,7 @@ import UIKit
 
 class ViewController: BaseViewController {
     @IBOutlet weak var informationsLabel: UILabel!
+    var positionsData: [MovableViewData] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,6 +41,14 @@ class ViewController: BaseViewController {
 
         informationsLabel.text = xPosition + yPosition + pressure + date
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "GoToMovableViewDatasVC") {
+            // pass data to next view
+            let destinationVC = segue.destination as? MovableViewDatasVC
+            destinationVC?.datas = positionsData
+        }
+    }
 }
 
 extension ViewController : MovableViewDelegate {
@@ -48,7 +57,7 @@ extension ViewController : MovableViewDelegate {
     }
     
     func getLastDataToSave(datas: [MovableViewData]) {
-        
+        positionsData = datas
     }
     
     func getCurrentData(data: MovableViewData) {
