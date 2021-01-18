@@ -31,4 +31,9 @@ class MovableView: UIView {
     func configureView(with color: UIColor) {
         backgroundColor = color
     }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.superview?.bringSubviewToFront(self)
+        position = center
+    }
 }
