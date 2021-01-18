@@ -13,6 +13,7 @@ protocol MovableViewDelegate: class {
     func resetTimerForPopin()
 
 }
+
 class MovableView: UIView {
     private var positionsDatas: [MovableViewData] = []
 
@@ -50,6 +51,7 @@ class MovableView: UIView {
         positionsDatas.append(data)
     }
     
+    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.superview?.bringSubviewToFront(self)
         position = center
@@ -74,3 +76,4 @@ class MovableView: UIView {
         delegate?.getLastDataToSave(datas: positionsDatas )
     }
 }
+

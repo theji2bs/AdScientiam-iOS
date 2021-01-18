@@ -11,11 +11,15 @@ class ViewController: BaseViewController {
     @IBOutlet weak var informationsLabel: UILabel!
     var positionsData: [MovableViewData] = []
     
+    let dataManager = DataManager()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         configureMovableView()
+        loadDataStored()
     }
+    
     private func configureMovableView() {
         let rectSize = 70.0
         let rectColor = UIColor.yellow
@@ -38,8 +42,14 @@ class ViewController: BaseViewController {
         let yPosition = " y: \(data.getViewPosition().y)"
         let pressure = " pressure: \(data.getPressure())"
         let date = " date: \(data.getDate())"
-
+        
         informationsLabel.text = xPosition + yPosition + pressure + date
+    }
+    
+    private func loadDataStored() {
+        if let datas = dataManager.loadMovableViewDatas() {
+            self.positionsData = datas
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -58,9 +68,11 @@ extension ViewController : MovableViewDelegate {
     
     func getLastDataToSave(datas: [MovableViewData]) {
         positionsData = datas
+        dataManager.saveMovableViewDatas(with: datas)
     }
     
     func getCurrentData(data: MovableViewData) {
         configureLabelwith(data: data)
     }
 }
+

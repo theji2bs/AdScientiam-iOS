@@ -20,6 +20,7 @@
 		A9A4DD3625B5865000363EB0 /* MovableViewDatasVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9A4DD3525B5865000363EB0 /* MovableViewDatasVC.swift */; };
 		A9A4DD3B25B5878500363EB0 /* MovableViewDataCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9A4DD3925B5878500363EB0 /* MovableViewDataCell.swift */; };
 		A9A4DD3C25B5878500363EB0 /* MovableViewDataCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9A4DD3A25B5878500363EB0 /* MovableViewDataCell.xib */; };
+		A9A4DD4025B58DE900363EB0 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9A4DD3F25B58DE900363EB0 /* DataManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		A9A4DD3525B5865000363EB0 /* MovableViewDatasVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovableViewDatasVC.swift; sourceTree = "<group>"; };
 		A9A4DD3925B5878500363EB0 /* MovableViewDataCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovableViewDataCell.swift; sourceTree = "<group>"; };
 		A9A4DD3A25B5878500363EB0 /* MovableViewDataCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovableViewDataCell.xib; sourceTree = "<group>"; };
+		A9A4DD3F25B58DE900363EB0 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +131,7 @@
 		A9A4DD1D25B5747E00363EB0 /* DataManager */ = {
 			isa = PBXGroup;
 			children = (
+				A9A4DD3F25B58DE900363EB0 /* DataManager.swift */,
 			);
 			path = DataManager;
 			sourceTree = "<group>";
@@ -255,6 +258,7 @@
 				A9A4DD0425B571D800363EB0 /* SceneDelegate.swift in Sources */,
 				A9A4DD3625B5865000363EB0 /* MovableViewDatasVC.swift in Sources */,
 				A9A4DD3025B581EF00363EB0 /* BaseViewController.swift in Sources */,
+				A9A4DD4025B58DE900363EB0 /* DataManager.swift in Sources */,
 				A9A4DD3B25B5878500363EB0 /* MovableViewDataCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

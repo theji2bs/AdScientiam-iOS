@@ -9,9 +9,9 @@ import Foundation
 import UIKit
 
 struct MovableViewData: Codable {
-    var viewPosition: CGPoint
-    var date: Date
-    var pressure: CGFloat
+    let viewPosition: CGPoint
+    let date: Date
+    let pressure: CGFloat
     
     func getViewPosition() -> CGPoint {
         return viewPosition

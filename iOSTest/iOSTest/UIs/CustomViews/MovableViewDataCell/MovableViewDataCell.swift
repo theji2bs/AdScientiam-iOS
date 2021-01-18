@@ -26,6 +26,7 @@ class MovableViewDataCell: UITableViewCell {
     }
     
     func configure(with data: MovableViewData) {
+
         xPositionLabel.text = "X position : \(data.getViewPosition().x)"
         yPositionLabel.text = "Y position : \(data.getViewPosition().y)"
         pressureLabel.text = "Pressure : \(data.getPressure())"
