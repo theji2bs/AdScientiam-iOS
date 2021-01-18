@@ -60,6 +60,7 @@
 		A9A4DD0025B571D800363EB0 /* iOSTest */ = {
 			isa = PBXGroup;
 			children = (
+				A9A4DD2A25B57AFE00363EB0 /* Utils */,
 				A9A4DD1D25B5747E00363EB0 /* DataManager */,
 				A9A4DD1C25B5747500363EB0 /* Models */,
 				A9A4DD1925B573F500363EB0 /* UIs */,
@@ -143,6 +144,13 @@
 				A9A4DD1A25B5742700363EB0 /* MainVC */,
 			);
 			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		A9A4DD2A25B57AFE00363EB0 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

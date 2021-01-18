@@ -8,6 +8,7 @@
 import UIKit
 
 class ViewController: UIViewController {
+    @IBOutlet weak var informationsLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,6 +29,27 @@ class ViewController: UIViewController {
         let myView = MovableView(frame: frame)
         myView.configureView(with: rectColor)
         self.view.addSubview(myView)
+        myView.delegate = self
+    }
+    
+    private func configureLabelwith( data: MovableViewData) {
+        let xPosition = "x: \(data.getViewPosition().x)"
+        let yPosition = "y: \(data.getViewPosition().y)"
+        let pressure = "pressure: \(data.getPressure())"
+        let date = "date: \(data.getDate())"
+
+        informationsLabel.text = xPosition + yPosition + pressure + date
     }
 }
 
+extension ViewController : MovableViewDelegate {
+    func getLastDataToSave(datas: [MovableViewData]) {
+        
+    }
+    
+    func getCurrentData(data: MovableViewData) {
+        configureLabelwith(data: data)
+    }
+    
+    
+}
