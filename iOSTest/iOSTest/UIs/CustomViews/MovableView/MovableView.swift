@@ -10,6 +10,8 @@ import UIKit
 protocol MovableViewDelegate: class {
     func getLastDataToSave(datas: [MovableViewData])
     func getCurrentData(data: MovableViewData)
+    func resetTimerForPopin()
+
 }
 class MovableView: UIView {
     private var positionsDatas: [MovableViewData] = []
@@ -61,5 +63,14 @@ class MovableView: UIView {
                               date: Date(),
                               pressure: touche.force)
         }
+        delegate?.resetTimerForPopin()
+    }
+    
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        delegate?.resetTimerForPopin()
+    }
+    
+    override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
+        delegate?.getLastDataToSave(datas: positionsDatas )
     }
 }

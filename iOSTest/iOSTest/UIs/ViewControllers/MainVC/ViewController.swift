@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: BaseViewController {
     @IBOutlet weak var informationsLabel: UILabel!
     
     override func viewDidLoad() {
@@ -34,15 +34,19 @@ class ViewController: UIViewController {
     
     private func configureLabelwith( data: MovableViewData) {
         let xPosition = "x: \(data.getViewPosition().x)"
-        let yPosition = "y: \(data.getViewPosition().y)"
-        let pressure = "pressure: \(data.getPressure())"
-        let date = "date: \(data.getDate())"
+        let yPosition = " y: \(data.getViewPosition().y)"
+        let pressure = " pressure: \(data.getPressure())"
+        let date = " date: \(data.getDate())"
 
         informationsLabel.text = xPosition + yPosition + pressure + date
     }
 }
 
 extension ViewController : MovableViewDelegate {
+    func resetTimerForPopin() {
+        self.resetTimer()
+    }
+    
     func getLastDataToSave(datas: [MovableViewData]) {
         
     }
@@ -50,6 +54,4 @@ extension ViewController : MovableViewDelegate {
     func getCurrentData(data: MovableViewData) {
         configureLabelwith(data: data)
     }
-    
-    
 }
